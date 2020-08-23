@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, component } from "react";
 import { Prompt } from "react-router-dom";
 import ArtigoApi from "../api/ArtigoApi";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -9,6 +9,7 @@ import Link from "@material-ui/core/Link";
 import Comentarios from "./Comentarios";
 import Head from "./Head";
 import Footer from "./Footer";
+import Votos from "./Votos";
 
 export default function ArtigoShow({ artigo, titulo, match }) {
   const [artigoShow, setArtigoShow] = useState(artigo);
@@ -27,19 +28,6 @@ export default function ArtigoShow({ artigo, titulo, match }) {
     }
   }, [artigo, match]);
 
-  function Copyright() {
-    return (
-      <Typography variant="body2" color="textSecondary">
-        {"Copyright © "}
-        <Link color="inherit" href="https://material-ui.com/">
-          Your Website
-        </Link>{" "}
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-    );
-  }
-
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
@@ -56,11 +44,12 @@ export default function ArtigoShow({ artigo, titulo, match }) {
 
   return (
     <>
-     <Head/>
+      <Head />
       {artigoShow && (
         <div className={classes.root}>
           <CssBaseline />
           <Container component="main" className={classes.main} maxWidth="sm">
+            <Votos votos={artigoShow.curtida_artigo} />
             <Typography variant="h2" component="h1" gutterBottom>
               {artigoShow.titulo_artigo}
             </Typography>
@@ -69,9 +58,8 @@ export default function ArtigoShow({ artigo, titulo, match }) {
               {artigoShow.texto_artigo}
             </Typography>
           </Container>
-
-          <Comentarios/>
-          <Footer/>
+          <Comentarios />
+          <Footer />
         </div>
       )}
     </>

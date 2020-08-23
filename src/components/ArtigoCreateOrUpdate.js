@@ -57,6 +57,7 @@ export default function CreateOrUpdate({ history, match }) {
     titulo_artigo: "",
     autor_artigo: "",
     curtida_artigo: 0,
+    descurtida_artigo: 0,
     texto_artigo: "",
   });
 
