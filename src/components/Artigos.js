@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Artigos() {
+export default function Artigos() {
   const classes = useStyles();
 
   // useState => cria novo state
@@ -193,4 +193,3 @@ function Artigos() {
     </>
   );
 }
-export default Artigos;

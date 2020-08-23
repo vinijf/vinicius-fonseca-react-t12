@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Prompt } from "react-router-dom";
 import ArtigoApi from "../api/ArtigoApi";
 
-function ArtigoShow({ artigo, titulo, match }) {
+export default function ArtigoShow({ artigo, titulo, match }) {
   const [artigoShow, setArtigoShow] = useState(artigo);
   const [tituloDetalhe, setTituloDetalhe] = useState(titulo);
 
@@ -12,7 +12,7 @@ function ArtigoShow({ artigo, titulo, match }) {
     if (match) {
       setTituloDetalhe("Produto Detalhe Por Rota");
       let idArtigo = +match.params.id;
-      ArtigoApi.getByCodigo(idArtigo).then((response) => {
+      ArtigoApi.getById(idArtigo).then((response) => {
         setArtigoShow(response.data);
       });
     } else {
@@ -39,5 +39,3 @@ function ArtigoShow({ artigo, titulo, match }) {
     </>
   );
 }
-
-export default ArtigoShow;

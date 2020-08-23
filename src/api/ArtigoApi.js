@@ -7,7 +7,7 @@ class ArtigoApi {
       return Axios.get(`${this.baseUrl}/Artigos`);
     }
   
-    static getByCodigo(id) {
+    static getById(id) {
       return Axios.get(`${this.baseUrl}/Artigo/${id}`);
     }
   
