@@ -51,14 +51,14 @@ export default function Comentarios() {
             <Table size="small">
               <TableHead>
                 <TableRow>
-                  <TableCell>Autor</TableCell>
-                  <TableCell>Comentario</TableCell>
+                  <TableCell></TableCell>
+                  <TableCell></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {comentarios.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell>{row.autor_comentario}</TableCell>
+                    <TableCell>{row.autor_comentario}:</TableCell>
                     <TableCell>{row.texto_comentario}</TableCell>
                   </TableRow>
                 ))}
