@@ -10,6 +10,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import ArtigoApi from "../api/ArtigoApi";
 import { toast } from "react-toastify";
+import Head from "./Head";
+import Footer from "./Footer";
 
 function Copyright() {
   return (
@@ -95,18 +97,13 @@ export default function CreateOrUpdate({ history, match }) {
 
   function changeHandler(event) {
     setErrors({});
-    switch (event.target.name) {
-      case "nome":
-        if (event.target.value.length === 0)
-          setErrors({ nome: "Nome é obrigatório" });
-        break;
-      default:
-    }
 
     setArtigo({ ...artigo, [event.target.name]: event.target.value });
   }
 
   return (
+    <>
+    <Head/>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -126,6 +123,7 @@ export default function CreateOrUpdate({ history, match }) {
                 id="titulo_artigo"
                 autoComplete="titulo_artigo"
                 value={artigo.titulo_artigo}
+                onChange={changeHandler}
               />
             </Grid>
             <Grid item xs={12}>
@@ -139,6 +137,7 @@ export default function CreateOrUpdate({ history, match }) {
                 id="autor_artigo"
                 autoComplete="autor_artigo"
                 value={artigo.autor_artigo}
+                onChange={changeHandler}
               />
             </Grid>
             <Grid item xs={12}>
@@ -154,6 +153,7 @@ export default function CreateOrUpdate({ history, match }) {
                 id="texto_artigo"
                 autoComplete="texto_artigo"
                 value={artigo.texto_artigo}
+                onChange={changeHandler}
               />
             </Grid>
           </Grid>
@@ -175,9 +175,8 @@ export default function CreateOrUpdate({ history, match }) {
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
     </Container>
+    <Footer/>
+    </>
   );
 }

@@ -73,12 +73,12 @@ express.delete("/artigo/:id", function (request, response) {
 
 // Get all
 express.get("/Comentarios", function (request, response) {
-    response.json(artigos);
+    response.json(comentarios);
   });
   
   // Create
   express.post("/Comentario", function (request, response) {
-    artigos.push(request.body);
+    comentarios.push(request.body);
     response.json();
   });
 

@@ -14,6 +14,8 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import ArtigoApi from "../api/ArtigoApi";
 import { toast } from "react-toastify";
+import Head from "./Head";
+import Footer from "./Footer";
 
 function Copyright() {
   return (
@@ -87,52 +89,8 @@ export default function Artigos() {
         <>
           <React.Fragment>
             <CssBaseline />
-            <AppBar position="relative">
-              <Toolbar>
-                <Typography variant="h6" color="inherit" noWrap>
-                  Album layout
-                </Typography>
-              </Toolbar>
-            </AppBar>
+            <Head />
             <main>
-              {/* Hero unit */}
-              <div className={classes.heroContent}>
-                <Container maxWidth="sm">
-                  <Typography
-                    component="h1"
-                    variant="h2"
-                    align="center"
-                    color="textPrimary"
-                    gutterBottom
-                  >
-                    Album layout
-                  </Typography>
-                  <Typography
-                    variant="h5"
-                    align="center"
-                    color="textSecondary"
-                    paragraph
-                  >
-                    Something short and leading about the collection below—its
-                    contents, the creator, etc. Make it short and sweet, but not
-                    too short so folks don&apos;t simply skip over it entirely.
-                  </Typography>
-                  <div className={classes.heroButtons}>
-                    <Grid container spacing={2} justify="center">
-                      <Grid item>
-                        <Button variant="contained" color="primary">
-                          Main call to action
-                        </Button>
-                      </Grid>
-                      <Grid item>
-                        <Button variant="outlined" color="primary">
-                          Secondary action
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </div>
-                </Container>
-              </div>
               <Container className={classes.cardGrid} maxWidth="md">
                 {/* End hero unit */}
                 <Grid container spacing={4}>
@@ -149,7 +107,7 @@ export default function Artigos() {
                             {card.titulo_artigo}
                           </Typography>
                           <Typography gutterBottom variant="h6" component="h2">
-                            {card.titulo_artigo}
+                            {card.autor_artigo}
                           </Typography>
                           <Typography numberOfLines={1}>
                             {card.texto_artigo.length < 35
@@ -172,20 +130,7 @@ export default function Artigos() {
               </Container>
             </main>
             {/* Footer */}
-            <footer className={classes.footer}>
-              <Typography variant="h6" align="center" gutterBottom>
-                Footer
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                align="center"
-                color="textSecondary"
-                component="p"
-              >
-                Something here to give the footer a purpose!
-              </Typography>
-              <Copyright />
-            </footer>
+            <Footer />
             {/* End footer */}
           </React.Fragment>
         </>

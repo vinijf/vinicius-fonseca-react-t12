@@ -1,4 +1,4 @@
-import Axious from "axios";
+import Axios from "axios";
 
 class ComentarioApi {
     static baseUrl = "http://localhost:8888";
@@ -9,10 +9,6 @@ class ComentarioApi {
    
     static add(Comentario) {
       return Axios.post(`${this.baseUrl}/Comentario`, Comentario);
-    }
-  
-    static delete(id) {
-      return Axios.delete(`${this.baseUrl}/Comentario`);
     }
   }
   
