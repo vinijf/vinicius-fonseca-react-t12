@@ -64,13 +64,13 @@ express.post("/Artigo", function (request, response) {
 
 // Get all
 express.get("/Comentarios", function (request, response) {
-  response.json(comentarios);
-});
-
-// Create
-express.post("/Comentario", function (request, response) {
-  comentarios.push(request.body);
-  response.json();
-});
+    response.json(comentarios);
+  });
+  
+  // Create
+  express.post("/Comentario", function (request, response) {
+    comentarios.push(request.body);
+    response.json();
+  });
 
 express.listen(8888);

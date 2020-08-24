@@ -14,7 +14,7 @@ import Comentar from "./ComentarioCreate";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
-export default function ArtigoShow({ artigo, titulo, match }) {
+export default function ArtigoShow({ artigo, match }) {
   const [artigoShow, setArtigoShow] = useState(artigo);
 
   // 2) executa depois de mount

@@ -21,8 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Comentarios(id) {
-
+export default function Comentarios({id}) {
   const classes = useStyles();
 
   const [comentarios, setComentarios] = useState(undefined);
@@ -52,13 +51,13 @@ export default function Comentarios(id) {
               <TableHead>
                 <TableRow>
                   <TableCell></TableCell>
-                  <TableCell></TableCell>
+                  <TableCell>Comentario</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {comentarios.map((row) => (
+                {comentarios.filter(comentarios => comentarios.id_artigo == id).map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell>{row.autor_comentario}:</TableCell>
+                    <TableCell>{row.autor_comentario}</TableCell>
                     <TableCell>{row.texto_comentario}</TableCell>
                   </TableRow>
                 ))}
