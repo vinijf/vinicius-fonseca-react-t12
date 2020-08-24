@@ -51,13 +51,13 @@ export default function Comentarios({id}) {
               <TableHead>
                 <TableRow>
                   <TableCell></TableCell>
-                  <TableCell>Comentario</TableCell>
+                  <TableCell></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {comentarios.filter(comentarios => comentarios.id_artigo == id).map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell>{row.autor_comentario}</TableCell>
+                    <TableCell>{row.autor_comentario}:</TableCell>
                     <TableCell>{row.texto_comentario}</TableCell>
                   </TableRow>
                 ))}

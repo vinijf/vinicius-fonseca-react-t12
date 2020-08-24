@@ -116,8 +116,14 @@ export default function Artigos() {
                           </Typography>
                         </CardContent>
                         <CardActions>
-                          <Button size="small" color="primary">
-                            View
+                          <Button
+                            onClick={(event) =>
+                              (window.location.href = `artigo/show/${card.id}`)
+                            }
+                            size="small"
+                            color="primary"
+                          >
+                            ver
                           </Button>
                         </CardActions>
                       </Card>

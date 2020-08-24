@@ -58,53 +58,59 @@ export default function Head() {
   const classes = useStyles();
 
   return (
-      <React.Fragment>
-        <CssBaseline />
-        <AppBar position="relative">
-          <Toolbar>
-            <Typography variant="h6" color="inherit" noWrap>
-              Album layout
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              Album layout
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              paragraph
-            >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
-                </Grid>
+    <React.Fragment>
+      <CssBaseline />
+      <AppBar position="relative">
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            React TW12
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      {/* Hero unit */}
+      <div className={classes.heroContent}>
+        <Container maxWidth="sm">
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
+            Vinicius Jean Fonseca
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            color="textSecondary"
+            paragraph
+          >
+            Pojeto desenvolvido pelo Vinicius Jean Fonseca como trabalho final de React.
+          </Typography>
+          <div className={classes.heroButtons}>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button
+                  onClick={(event) => (window.location.href = "/")}
+                  variant="contained"
+                  color="primary"
+                >
+                  Home
+                </Button>
               </Grid>
-            </div>
-          </Container>
-        </div>
-      </React.Fragment>
+              <Grid item>
+                <Button
+                  onClick={(event) => (window.location.href = "/artigo/create")}
+                  variant="outlined"
+                  color="primary"
+                >
+                  Novo Artigo
+                </Button>
+              </Grid>
+            </Grid>
+          </div>
+        </Container>
+      </div>
+    </React.Fragment>
   );
 }
