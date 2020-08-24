@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
-export default class Counter extends Component {
-  static displayName = Counter.name;
+export default class Curtidas extends Component {
+  static displayName = Curtidas.name;
 
   constructor(props) {
     super(props);

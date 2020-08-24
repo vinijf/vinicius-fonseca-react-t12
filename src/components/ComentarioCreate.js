@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CreateOrUpdate({ history, id }) {
+export default function ComentarioCreate({ history, id }) {
   function refreshPage() {
     window.location.reload(false);
   }
