@@ -62,24 +62,15 @@ express.post("/Artigo", function (request, response) {
   response.json();
 });
 
-// Delete
-express.delete("/artigo/:id", function (request, response) {
-  var id = request.params["id"];
-  var artigo = artigos.filter((p) => {
-    return p.id == id;
-  })[0];
-  response.json();
-});
-
 // Get all
 express.get("/Comentarios", function (request, response) {
-    response.json(comentarios);
-  });
-  
-  // Create
-  express.post("/Comentario", function (request, response) {
-    comentarios.push(request.body);
-    response.json();
-  });
+  response.json(comentarios);
+});
+
+// Create
+express.post("/Comentario", function (request, response) {
+  comentarios.push(request.body);
+  response.json();
+});
 
 express.listen(8888);

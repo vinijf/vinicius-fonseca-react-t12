@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Comentarios() {
+export default function Comentarios(id) {
 
   const classes = useStyles();
 

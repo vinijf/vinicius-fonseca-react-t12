@@ -10,6 +10,7 @@ import Comentarios from "./Comentarios";
 import Head from "./Head";
 import Footer from "./Footer";
 import Curtias from "./Curtidas";
+import Comentar from "./ComentarioCreate";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
@@ -80,9 +81,18 @@ export default function ArtigoShow({ artigo, titulo, match }) {
             </Grid>
           </Container>
           <Container component="comentarios" className={classes.main} fixed>
-            <Paper className={classes.paper}>
-              <Comentarios />
-            </Paper>
+            <Grid container spacing={2}>
+              <Grid item xs={3}>
+                <Paper className={classes.paper}>
+                  <Comentar id={artigoShow.id} />
+                </Paper>
+              </Grid>
+              <Grid item xs>
+                <Paper className={classes.paper}>
+                  <Comentarios id={artigoShow.id} />
+                </Paper>
+              </Grid>
+            </Grid>
           </Container>
           <Footer />
         </div>

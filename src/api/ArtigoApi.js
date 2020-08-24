@@ -14,14 +14,6 @@ class ArtigoApi {
     static add(Artigo) {
       return Axios.post(`${this.baseUrl}/Artigo`, Artigo);
     }
-  
-    static edit(Artigo) {
-      return Axios.put(`${this.baseUrl}/Artigo`, Artigo);
-    }
-  
-    static delete(id) {
-      return Axios.delete(`${this.baseUrl}/Artigo`);
-    }
   }
   
   export default ArtigoApi;
