@@ -38,6 +38,7 @@ export default function CreateOrUpdate({ history, id }) {
   const [errors, setErrors] = useState({});
 
   const [comentario, setcomentario] = useState({
+    id: Math.floor(Math.random() * (1000000000000 - 0)) + 0,
     id_artigo: id,
     autor_comentario: "",
     texto_comentario: "",

@@ -39,6 +39,7 @@ export default function ArigoCreate({ history }) {
   const [errors, setErrors] = useState({});
 
   const [artigo, setArtigo] = useState({
+    id: Math.floor(Math.random() * (1000000000000 - 0)) + 0,
     titulo_artigo: "",
     autor_artigo: "",
     curtida_artigo: 0,
