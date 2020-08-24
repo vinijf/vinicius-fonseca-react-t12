@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import ComentarioApi from "../api/ComentarioApi";
 import { toast } from "react-toastify";
-import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,9 +30,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ComentarioCreate({ history, id }) {
-  function refreshPage() {
-    window.location.reload(false);
-  }
 
   const classes = useStyles();
 
@@ -53,6 +47,7 @@ export default function ComentarioCreate({ history, id }) {
 
     ComentarioApi.add(comentario)
       .then((response) => {
+        window.location.reload(false);
         toast.success("comentario criado com sucesso!");
       })
 
@@ -112,7 +107,6 @@ export default function ComentarioCreate({ history, id }) {
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={refreshPage}
             >
               Comentar
             </Button>
