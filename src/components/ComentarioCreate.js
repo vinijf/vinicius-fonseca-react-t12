@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateOrUpdate({ history, id }) {
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   const classes = useStyles();
 
   const [errors, setErrors] = useState({});
@@ -49,7 +53,6 @@ export default function CreateOrUpdate({ history, id }) {
 
     ComentarioApi.add(comentario)
       .then((response) => {
-        history.push("/artigos");
         toast.success("comentario criado com sucesso!");
       })
 
@@ -109,6 +112,7 @@ export default function CreateOrUpdate({ history, id }) {
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={refreshPage}
             >
               Comentar
             </Button>
